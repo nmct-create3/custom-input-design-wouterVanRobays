@@ -675,62 +675,6 @@ more padding on the right to avoid overlap
     Custom checkboxes & radio buttons
 */
 
-/* Hide the actual input with the class .o-hide-accessible */
-
-/* the label is a separate component */
-.c-custom-input-option-label {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
-    padding-bottom: 0;
-}
-
-.c-custom-input-option {
-    display: inline-flex;
-    -ms-align-items: center;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    border-radius: var(--radius);
-    margin-right: 8px;
-    border: 1px solid var(--color-neutral-xxx-light);
-    box-shadow: var(--inset-shadow);
-    transition: border var(--transition-alpha);
-}
-
-.c-custom-input-option__symbol {
-    width: 10px;
-    height: 10px;
-    fill: var(--color-alpha);
-    opacity: 0; /* Hide the svg initially */
-    transform: scale(.5);
-    transition: all var(--transition-alpha);
-}
-
-/* hover state */
-
-.c-custom-input-option-label:hover .c-custom-input-option {
-    border-color: var(--color-neutral-xx-light);
-}
-
-/* focused and active state */
-
-.c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option,
-.c-custom-input-option-hidden:active + .c-custom-input-option-label .c-custom-input-option {
-    border: 1px solid var(--color-alpha-x-light);
-    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
-}
-
-/* checked state */
-
-.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
-    opacity: 1; /* Show the svg when the invisible checkbox is checked */
-    transform: scale(1);
-}
-
 /*
     Component: Button
     ---
@@ -763,52 +707,6 @@ more padding on the right to avoid overlap
 .c-button:active {
     background-color: var(--color-alpha-dark);
     box-shadow: none;
-}
-
-/*
-    Component: Password Toggle
-    ---
-    Password toggle custom checkbox
-*/
-
-.c-password-toggle-container {
-    position: relative;
-    display: block;
-}
-
-.c-password-toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.c-password-toggle__label {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
-    padding: 14px 16px;
-}
-
-.c-password-toggle__symbol {
-    display: block;
-    width: 20px;
-    height: 20px;
-    fill: var(--color-neutral-x-light);
-}
-
-.c-password-toggle__symbol--hide {
-    display: none;
-}
-
-.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--hide {
-    display: block;
-}
-
-.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
-    display: none;
 }
 
 /*------------------------------------*\
