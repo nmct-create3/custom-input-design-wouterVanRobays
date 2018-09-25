@@ -672,12 +672,6 @@ more padding on the right to avoid overlap
 }
 
 /*
-    Custom option
-    ---
-    Custom checkboxes & radio buttons
-*/
-
-/*
     Component: Button
     ---
     Class to put on form buttons or
@@ -709,6 +703,21 @@ more padding on the right to avoid overlap
 .c-button:active {
     background-color: var(--color-alpha-dark);
     box-shadow: none;
+}
+
+/*
+    Custom option
+    ---
+    Custom checkboxes & radio buttons
+*/
+
+/* Hide the actual input with the class .o-hide-accessible */
+
+.c-custom-input-option-hidden:checked + .c-custom-input-option-label {
+    /*
+        Do magic stuff here, for example:
+        background-color: red;
+    */
 }
 
 /*------------------------------------*\
