@@ -713,6 +713,8 @@ more padding on the right to avoid overlap
 
 /* Hide the actual input with the class .o-hide-accessible */
 
+/* checked state */
+
 .c-custom-input-option-hidden:checked + .c-custom-input-option-label {
     /*
         Do magic stuff here, for example:
