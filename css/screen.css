@@ -720,6 +720,13 @@ more padding on the right to avoid overlap
     */
 }
 
+.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
+    /*
+        Do magic stuff here, for example:
+        fill: blue;
+    */
+}
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
