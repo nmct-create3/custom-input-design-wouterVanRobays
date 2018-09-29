@@ -52,7 +52,7 @@
     --radius: 3px;
 
     /* transitions */
-    --transition-alpha: .1s ease-in-out;
+    --transition-alpha: .1s ease-out;
 }
 
 /*------------------------------------*\
