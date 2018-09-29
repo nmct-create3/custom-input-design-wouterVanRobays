@@ -637,15 +637,6 @@ input::placeholder {
     box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
 }
 
-/*
-Input password with toggle checkbox on top of it needs
-more padding on the right to avoid overlap
-*/
-
-.c-input--password-with-toggle {
-    padding-right: 52px;
-}
-
 /* option input for checkboxes and radio buttons */
 
 .c-input-option {
@@ -715,7 +706,7 @@ more padding on the right to avoid overlap
 }
 
 .c-option-list__item {
-    
+
 }
 
 /*

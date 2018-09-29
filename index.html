@@ -17,17 +17,6 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/screen.css">
-        <script type="text/javascript">
-            function togglePassword() {
-                var passwordInput = document.querySelector(".js-password-input");
-
-                if (passwordInput.type === "password") {
-                    passwordInput.type = "text";
-                } else {
-                    passwordInput.type = "password";
-                }
-            }
-        </script>
     </head>
     <body>
         <section class="o-row o-row--lg o-row--login o-row--beta">
@@ -54,10 +43,10 @@
                             <label class="c-label" for="password">
                                 Password
                             </label>
-                            <input class="c-input c-input--password-with-toggle js-password-input" type="password" name="password" id="password" required>                                                            
+                            <input class="c-input" type="password" name="password" id="password" required>
                         </p>
                         <p class="c-form-field c-form-field--option">
-                            <input type="checkbox" id="rememberme">
+                            <input class="c-input-option" type="checkbox" id="rememberme">
                             <label class="c-label c-label--option" for="rememberme">
                                 Remember me
                             </label>
