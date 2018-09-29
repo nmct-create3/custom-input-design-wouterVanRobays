@@ -759,9 +759,10 @@ input::placeholder {
 
 }
 
-/* focused state */
+/* focused & active state */
 
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input {
+.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input,
+.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input {
 
 }
 
@@ -787,7 +788,8 @@ input::placeholder {
 
 /* focused state */
 
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative {
+.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative,
+.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative {
 
 }
 
@@ -801,12 +803,13 @@ input::placeholder {
 
 }
 
-.c-toggle__checkbox-hidden:focus:checked + .c-toggle__label .c-toggle__input--alternative::after {
+.c-toggle__checkbox-hidden:focus:checked + .c-toggle__label .c-toggle__input--alternative::after,
+.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
 
 }
 
 .c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative {
-    
+
 }
 
 /*------------------------------------*\
