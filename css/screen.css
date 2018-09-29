@@ -739,7 +739,75 @@ input::placeholder {
     Visually change a checkbox into a toggle
 */
 
+.c-toggle__label {
 
+}
+
+.c-toggle__label--inverted {
+
+}
+
+.c-toggle__input {
+
+}
+
+.c-toggle__label--inverted .c-toggle__input {
+
+}
+
+.c-toggle__input::after {
+
+}
+
+/* focused state */
+
+.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input {
+
+}
+
+/* checked state */
+
+.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input::after {
+
+}
+
+.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input {
+
+}
+
+/* alternative design */
+
+.c-toggle__input--alternative {
+
+}
+
+.c-toggle__input--alternative::after {
+
+}
+
+/* focused state */
+
+.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative {
+
+}
+
+.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative::after {
+
+}
+
+/* checked state */
+
+.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative::after {
+
+}
+
+.c-toggle__checkbox-hidden:focus:checked + .c-toggle__label .c-toggle__input--alternative::after {
+
+}
+
+.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative {
+    
+}
 
 /*------------------------------------*\
 #UTILITIES
