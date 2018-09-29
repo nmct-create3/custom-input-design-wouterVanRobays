@@ -706,6 +706,20 @@ more padding on the right to avoid overlap
 }
 
 /*
+    Component: Option list
+    ---
+
+*/
+
+.c-option-list {
+
+}
+
+.c-option-list__item {
+    
+}
+
+/*
     Component: Custom options
     ---
     Custom checkboxes & radio buttons
