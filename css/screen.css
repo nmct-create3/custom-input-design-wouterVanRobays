@@ -43,6 +43,65 @@
 
     /* transitions */
     --transition-alpha: .1s ease-out;
+
+    /* theme colors */
+    --html-text-color: var(--color-neutral-xxxx-dark);
+    --html-background-color: var(--color-neutral-xxxx-light);
+
+    --logo-path-1-fill: var(--color-neutral-xxxx-dark);
+    --logo-path-2-fill: var(--color-alpha);
+    --logo-path-3-fill: var(--color-alpha-x-dark);
+
+    --card-background-color: White;
+    --card-footer-border-color: var(--color-neutral-xxx-light);
+
+    --label-text-color: var(--color-neutral-xx-dark);
+
+    --input-background-color: White;
+    --input-border-color: var(--color-neutral-xxx-light);
+    --input-border-color-hover: var(--color-neutral-xx-light);
+    --input-border-color-focus: var(--color-alpha);
+    --input-text-color: var(--color-neutral-xxxx-dark);
+    --input-shadow-focus: 0 0 0 3px #3385ff4d;
+    --input-placeholder-color: var(--color-neutral-x-light);
+
+    --button-border-color: var(--color-alpha-dark);
+    --button-border-color-hover: var(--button-border-color);
+    --button-border-color-active: var(--button-border-color);
+    --button-border-color-focus: var(--button-border-color);
+    --button-background-color: var(--color-alpha);
+    --button-background-color-hover: var(--color-alpha-light);
+    --button-background-color-focus: var(--button-background-color);
+    --button-background-color-active: var(--color-alpha-dark);
+    --button-shadow-focus: var(--input-shadow-focus);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --html-text-color: White;
+        --html-background-color: var(--color-neutral-xxxx-dark);
+
+        --logo-path-1-fill: White;
+        --logo-path-2-fill: var(--logo-path-1-fill);
+        --logo-path-3-fill: var(--logo-path-1-fill);
+
+        --card-background-color: var(--color-neutral-xxx-dark);
+        --card-footer-border-color: var(--color-neutral-xxxx-dark);
+
+        --label-text-color: var(--color-neutral-xx-light);
+
+        --input-background-color: var(--color-neutral-xxxx-dark);
+        --input-border-color: var(--input-background-color);
+        --input-border-color-hover: var(--input-background-color);
+        --input-border-color-focus: var(--input-background-color);
+        --input-text-color: var(--color-neutral-xxxx-light);
+        --input-placeholder-color: var(--color-neutral-dark);
+        --input-shadow-focus: 0 0 0 1px var(--color-neutral-xxxx-dark), 0 0 0 4px #3385ffbf;
+
+        --button-border-color: var(--color-alpha);
+        --button-border-color-hover: var(--color-alpha-light);
+        --button-border-color-active: var(--color-alpha-dark);
+    }
 }
 
 /*------------------------------------*\
@@ -59,11 +118,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter Web", Helvetica, arial, sans-serif;
-    color: var(--color-neutral-xxxx-dark);
+    color: var(--html-text-color);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-neutral-xxxx-light);
+    background-color: var(--html-background-color);
 }
 
 *,
@@ -215,7 +274,7 @@ input {
 }
 
 input::placeholder {
-    color: var(--color-neutral-x-light);
+    color: var(--input-placeholder-color);
 }
 
 /*------------------------------------*\
@@ -240,11 +299,6 @@ input::placeholder {
     display: flex;
     -ms-align-items: center;
     align-items: center;
-}
-
-.o-row--beta {
-    background-color: var(--color-alpha);
-    background-image: linear-gradient(to bottom right, var(--color-alpha-light), var(--color-alpha-dark));
 }
 
 /* size modifiers */
@@ -518,15 +572,15 @@ input::placeholder {
 }
 
 .c-logo__path--1 {
-    fill: var(--color-neutral-xxxx-dark);
+    fill: var(--logo-path-1-fill);
 }
 
 .c-logo__path--2 {
-    fill: var(--color-alpha);
+    fill: var(--logo-path-2-fill);
 }
 
 .c-logo__path--3 {
-    fill: var(--color-alpha-x-dark);
+    fill: var(--logo-path-3-fill);
 }
 
 /* Light logo alternative */
@@ -542,7 +596,7 @@ input::placeholder {
 */
 
 .c-card {
-    background-color: white;
+    background-color: var(--card-background-color);
     margin-bottom: 24px;
     border-radius: var(--radius);
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
@@ -558,7 +612,7 @@ input::placeholder {
 
 .c-card__footer {
     text-align: center;
-    border-top: 1px solid var(--color-neutral-xxx-light);
+    border-top: 1px solid var(--card-footer-border-color);
 }
 
 .c-card__title {
@@ -603,10 +657,10 @@ input::placeholder {
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    border: 1px solid var(--color-neutral-xxx-light);
+    border: 1px solid var(--input-border-color);
     border-radius: var(--radius);
-    color: var(--color-neutral-xxxx-dark);
-    background-color: #fff;
+    color: var(--input-text-color);
+    background-color: var(--input-background-color);
     font-family: inherit;
     font-size: 16px;
     line-height: 24px;
@@ -616,13 +670,13 @@ input::placeholder {
 }
 
 .c-input:hover {
-    border-color: var(--color-neutral-xx-light);
+    border-color: var(--input-border-color-hover);
 }
 
 .c-input:focus,
 .c-input:active {
-    border-color: var(--color-alpha-x-light);
-    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
+    border-color: var(--input-border-color-focus);
+    box-shadow: var(--input-shadow-focus);
 }
 
 /* option input for checkboxes and radio buttons */
@@ -642,7 +696,7 @@ input::placeholder {
     padding-bottom: 8px;
     font-size: 14px;
     line-height: 16px;
-    color: var(--color-neutral-x-dark);
+    color: var(--label-text-color);
 }
 
 .c-label--option {
@@ -659,8 +713,8 @@ input::placeholder {
     font-size: 16px;
     font-weight: 700;
     border-radius: var(--radius);
-    border: 1px solid var(--color-alpha-dark);
-    background-color: var(--color-alpha);
+    border: 1px solid var(--buton-border-color);
+    background-color: var(--button-background-color);
     color: #fff;
     padding: 11px 16px;
     line-height: 24px;
@@ -670,16 +724,19 @@ input::placeholder {
 }
 
 .c-button:hover {
-    background-color: var(--color-alpha-light);
+    border-color: var(--button-border-color-hover);
+    background-color: var(--button-background-color-hover);
 }
 
 .c-button:focus {
-    background-color: var(--color-alpha);
-    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
+    border-color: var(--button-border-color-focus);
+    background-color: var(--button-background-color-focus);
+    box-shadow: var(--button-shadow-focus);
 }
 
 .c-button:active {
-    background-color: var(--color-alpha-dark);
+    border-color: var(--button-border-color-active);
+    background-color: var(--button-background-color-active);
     box-shadow: none;
 }
 
@@ -705,20 +762,41 @@ input::placeholder {
 
 /* Hide the actual input with the class .o-hide-accessible */
 
-/* checked state */
-
-.c-custom-input-option-hidden:checked + .c-custom-input-option-label {
-    /*
-        Do magic stuff here, for example:
-        background-color: red;
-    */
+.c-custom-option {
 }
 
-.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
-    /*
-        Do magic stuff here, for example:
-        fill: blue;
-    */
+.c-custom-option__fake-input {
+}
+
+.c-custom-option__fake-input--checkbox {
+}
+
+.c-custom-option__fake-input--radio {
+}
+
+.c-custom-option__symbol {
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
+}
+
+.c-custom-option__fake-input--radio .c-custom-option__symbol {
+}
+
+/* hover state */
+
+.c-custom-option:hover .c-custom-option__fake-input {
+}
+
+/* focused and active state */
+
+.c-option--hidden:focus + .c-custom-option .c-custom-option__fake-input,
+.c-option--hidden:active + .c-custom-option .c-custom-option__fake-input {
+}
+
+/* checked state */
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
 }
 
 /*
@@ -727,77 +805,52 @@ input::placeholder {
     Visually change a checkbox into a toggle
 */
 
-.c-toggle__label {
-
+.c-custom-toggle-list {
 }
 
-.c-toggle__label--inverted {
-
+.c-custom-toggle-list__item {
 }
 
-.c-toggle__input {
-
+.c-custom-toggle-list__item + .c-custom-toggle-list__item {
 }
 
-.c-toggle__label--inverted .c-toggle__input {
-
+.c-custom-toggle {
 }
 
-.c-toggle__input::after {
-
+.c-custom-toggle--inverted {
 }
 
-/* focused & active state */
-
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input,
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input {
-
+.c-custom-toggle__fake-input {
 }
 
-/* checked state */
-
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input::after {
-
+.c-custom-toggle--inverted .c-custom-toggle__fake-input {
 }
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input {
-
+.c-custom-toggle__fake-input::after {
 }
 
-/* alternative design */
+/* focused and active state */
 
-.c-toggle__input--alternative {
-
+.c-option--hidden:focus + .c-custom-toggle .c-custom-toggle__fake-input,
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input {
 }
 
-.c-toggle__input--alternative::after {
+/* special active state */
 
-}
-
-/* focused state */
-
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative,
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative {
-
-}
-
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative::after {
-
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
 }
 
 /* checked state */
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative::after {
-
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input {
 }
 
-.c-toggle__checkbox-hidden:focus:checked + .c-toggle__label .c-toggle__input--alternative::after,
-.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
-
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
 }
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative {
+/* special checked active state */
 
+.c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
 }
 
 /*------------------------------------*\
