@@ -58,7 +58,7 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Inter UI Web", Helvetica, arial, sans-serif;
+    font-family: "Inter Web", Helvetica, arial, sans-serif;
     color: var(--color-neutral-xxxx-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
