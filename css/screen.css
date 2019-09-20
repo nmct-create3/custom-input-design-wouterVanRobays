@@ -574,7 +574,7 @@ input::placeholder {
     line-height: 24px;
     padding: 11px 16px;
     outline: none;
-    transition: border .1s ease-in-out;
+    transition: border .1s ease-out;
 }
 
 .c-input:hover {
@@ -628,7 +628,7 @@ input::placeholder {
     line-height: 24px;
     width: 100%;
     outline: none;
-    transition: all .1s ease-in-out;
+    transition: all .1s ease-out;
 }
 
 .c-button:hover {
