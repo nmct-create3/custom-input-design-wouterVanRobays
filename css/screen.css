@@ -471,9 +471,6 @@ input::placeholder {
 */
 
 .c-logo {
-    --logo-path-1-fill: var(--global-color-neutral-xxxx-dark);
-    --logo-path-2-fill: var(--global-color-alpha);
-    --logo-path-3-fill: var(--color-alpha-x-dark);
     height: 24px;
     display: flex;
     align-items: center;
@@ -604,7 +601,7 @@ input::placeholder {
     padding-bottom: 8px;
     font-size: 14px;
     line-height: 16px;
-    color: var(--label-text-color);
+    color: #4B4C60;
 }
 
 .c-label--option {
@@ -769,11 +766,11 @@ input::placeholder {
 */
 
 .u-color-neutral {
-    color: var(--global-color-neutral);
+    color: #757787;
 }
 
 .u-color-neutral-dark {
-    color: var(--global-color-neutral-dark);
+    color: #606274;
 }
 
 /*
