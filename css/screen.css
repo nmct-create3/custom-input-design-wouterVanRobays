@@ -20,54 +20,56 @@
 
 :root {
     /* colors */
-    --color-alpha-light: #4F95FF;
-    --color-alpha: #3385FF;
-    --color-alpha-dark: #2E77E6;
-    --color-alpha-x-dark: #1B4186;
-    --color-neutral-xxxx-light: #F5F6FA;
-    --color-neutral-xxx-light: #E2E3E7;
-    --color-neutral-xx-light: #caccd4;
-    --color-neutral-x-light: #b5b6c0;
-    --color-neutral-light: #a0a1ad;
-    --color-neutral: #8b8c9a;
-    --color-neutral-dark: #757787;
-    --color-neutral-x-dark: #606274;
-    --color-neutral-xx-dark: #4b4c60;
-    --color-neutral-xxx-dark: #35374d;
-    --color-neutral-xxxx-dark: #20223a;
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-alpha-x-dark: #1B4186;
+    --global-color-alpha-transparent: #3385ffbf;
+    --global-color-alpha-x-transparent: #3385ff4d;
+
+    --global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7;
+    --global-color-neutral-xx-light: #caccd4;
+    --global-color-neutral-x-light: #b5b6c0;
+    --global-color-neutral-light: #a0a1ad;
+    --global-color-neutral: #8b8c9a;
+    --global-color-neutral-dark: #757787;
+    --global-color-neutral-x-dark: #606274;
+    --global-color-neutral-xx-dark: #4b4c60;
+    --global-color-neutral-xxx-dark: #35374d;
+    --global-color-neutral-xxxx-dark: #20223a;
 
     /* border radius */
-    --radius: 3px;
+    --global-borderRadius: 3px;
 
     /* transitions */
-    --transition-alpha: .1s ease-out;
+    --global-transitionTiming-alpha: .1s ease-out;
 
-    /* theme colors */
-    --html-text-color: var(--color-neutral-xxxx-dark);
-    --html-background-color: var(--color-neutral-xxxx-light);
+    /* global page colors */
+    --global-html-color: var(--global-color-neutral-xxxx-dark);
+    --global-html-backgroundColor: var(--global-color-neutral-xxxx-light);
+    --global-selection-backgroundColor: var(--global-color-alpha);
+    --global-link-color: var(--global-color-alpha);
+    --global-link-visited-color: var(--global-color-alpha);
+    --global-link-active-color: var(--global-color-alpha-dark);
+    --global-link-focus-color: var(--global-color-alpha);
+    --global-link-hover-color: var(--global-color-alpha-light);
 
-    --logo-path-1-fill: var(--color-neutral-xxxx-dark);
-    --logo-path-2-fill: var(--color-alpha);
-    --logo-path-3-fill: var(--color-alpha-x-dark);
-
-    --card-background-color: White;
-    --card-footer-border-color: var(--color-neutral-xxx-light);
-
-    --label-text-color: var(--color-neutral-xx-dark);
+    --label-color: var(--global-color-neutral-xx-dark);
 
     --input-background-color: White;
-    --input-border-color: var(--color-neutral-xxx-light);
-    --input-border-color-hover: var(--color-neutral-xx-light);
-    --input-border-color-focus: var(--color-alpha);
-    --input-text-color: var(--color-neutral-xxxx-dark);
+    --input-border-color: var(--global-color-neutral-xxx-light);
+    --input-border-color-hover: var(--global-color-neutral-xx-light);
+    --input-border-color-focus: var(--global-color-alpha);
+    --input-text-color: var(--global-color-neutral-xxxx-dark);
     --input-shadow-focus: 0 0 0 3px #3385ff4d;
-    --input-placeholder-color: var(--color-neutral-x-light);
+    --input-placeholder-color: var(--global-color-neutral-x-light);
 
     --button-border-color: var(--color-alpha-dark);
     --button-border-color-hover: var(--button-border-color);
     --button-border-color-active: var(--button-border-color);
     --button-border-color-focus: var(--button-border-color);
-    --button-background-color: var(--color-alpha);
+    --button-background-color: var(--global-color-alpha);
     --button-background-color-hover: var(--color-alpha-light);
     --button-background-color-focus: var(--button-background-color);
     --button-background-color-active: var(--color-alpha-dark);
@@ -76,27 +78,20 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --html-text-color: White;
-        --html-background-color: var(--color-neutral-xxxx-dark);
+        --global-html-color: White;
+        --global-html-backgroundColor: var(--global-color-neutral-xxxx-dark);
 
-        --logo-path-1-fill: White;
-        --logo-path-2-fill: var(--logo-path-1-fill);
-        --logo-path-3-fill: var(--logo-path-1-fill);
+        --label-text-color: var(--global-color-neutral-xx-light);
 
-        --card-background-color: var(--color-neutral-xxx-dark);
-        --card-footer-border-color: var(--color-neutral-xxxx-dark);
-
-        --label-text-color: var(--color-neutral-xx-light);
-
-        --input-background-color: var(--color-neutral-xxxx-dark);
+        --input-background-color: var(--global-color-neutral-xxxx-dark);
         --input-border-color: var(--input-background-color);
         --input-border-color-hover: var(--input-background-color);
         --input-border-color-focus: var(--input-background-color);
-        --input-text-color: var(--color-neutral-xxxx-light);
-        --input-placeholder-color: var(--color-neutral-dark);
-        --input-shadow-focus: 0 0 0 1px var(--color-neutral-xxxx-dark), 0 0 0 4px #3385ffbf;
+        --input-text-color: var(--global-color-neutral-xxxx-light);
+        --input-placeholder-color: var(--global-color-neutral-dark);
+        --input-shadow-focus: 0 0 0 1px var(--global-color-neutral-xxxx-dark), 0 0 0 4px #3385ffbf;
 
-        --button-border-color: var(--color-alpha);
+        --button-border-color: var(--global-color-alpha);
         --button-border-color-hover: var(--color-alpha-light);
         --button-border-color-active: var(--color-alpha-dark);
     }
@@ -116,11 +111,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter Web", Helvetica, arial, sans-serif;
-    color: var(--html-text-color);
+    color: var(--global-html-color);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--html-background-color);
+    background-color: var(--global-html-backgroundColor);
 }
 
 *,
@@ -137,13 +132,13 @@ html {
 */
 
 ::-moz-selection {
-    background: var(--color-alpha);
+    background: var(--global-selection-backgroundColor);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: var(--color-alpha);
+    background: var(--global-selection-backgroundColor);
     color: white;
     text-shadow: none;
 }
@@ -249,21 +244,28 @@ hr {
 }
 
 a {
-    transition: all var(--transition-alpha);
-    color: var(--color-alpha);
-    outline-color: var(--color-alpha);
+    --link-transition: all var(--global-transitionTiming-alpha);
+    transition: var(--link-transition);
+    color: var(--global-link-color);
+    outline-color: var(--global-link-BoxShadowColor);
     outline-width: medium;
     outline-offset: 2px;
 }
 
-a:visited,
-a:active {
-    color: var(--color-alpha);
+a:visited {
+    color: var(--global-link-visited-color);
 }
 
-a:hover,
+a:hover {
+    color: var(--global-link-hover-color);
+}
+
+a:active {
+    color: var(--global-link-active-color);
+}
+
 a:focus {
-    color: var(--color-alpha-light);
+    color: var(--global-link-focus-color);
 }
 
 label,
@@ -558,6 +560,9 @@ input::placeholder {
 */
 
 .c-logo {
+    --logo-path-1-fill: var(--global-color-neutral-xxxx-dark);
+    --logo-path-2-fill: var(--global-color-alpha);
+    --logo-path-3-fill: var(--color-alpha-x-dark);
     height: 24px;
     display: flex;
     align-items: center;
@@ -581,10 +586,12 @@ input::placeholder {
     fill: var(--logo-path-3-fill);
 }
 
-/* Light logo alternative */
-
-.c-logo--light .c-logo__path {
-    fill: white;
+@media (prefers-color-scheme: dark) {
+    .c-logo {       
+        --logo-path-1-fill: White;
+        --logo-path-2-fill: var(--logo-path-1-fill);
+        --logo-path-3-fill: var(--logo-path-1-fill);
+    }
 }
 
 /*
@@ -594,9 +601,11 @@ input::placeholder {
 */
 
 .c-card {
-    background-color: var(--card-background-color);
+    --card-backgroundColor: White;
+    --card__footer-borderColor: var(--global-color-neutral-xxx-light);
+    background-color: var(--card-backgroundColor);
     margin-bottom: 24px;
-    border-radius: var(--radius);
+    border-radius: var(--global-borderRadius);
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
     overflow: hidden;
 }
@@ -610,7 +619,7 @@ input::placeholder {
 
 .c-card__footer {
     text-align: center;
-    border-top: 1px solid var(--card-footer-border-color);
+    border-top: 1px solid var(--card__footer-borderColor);
 }
 
 .c-card__title {
@@ -627,6 +636,13 @@ input::placeholder {
 
     .c-card__title {
         margin-bottom: 48px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-card {
+        --card-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --card__footer-borderColor: var(--global-color-neutral-xxxx-dark);
     }
 }
 
@@ -656,7 +672,7 @@ input::placeholder {
     appearance: none;
     width: 100%;
     border: 1px solid var(--input-border-color);
-    border-radius: var(--radius);
+    border-radius: var(--global-borderRadius);
     color: var(--input-text-color);
     background-color: var(--input-background-color);
     font-family: inherit;
@@ -664,7 +680,7 @@ input::placeholder {
     line-height: 24px;
     padding: 11px 16px;
     outline: none;
-    transition: border var(--transition-alpha);
+    transition: border var(--global-transition-timing-alpha);
 }
 
 .c-input:hover {
@@ -710,7 +726,7 @@ input::placeholder {
 .c-button {
     font-size: 16px;
     font-weight: 700;
-    border-radius: var(--radius);
+    border-radius: var(--global-borderRadius);
     border: 1px solid var(--buton-border-color);
     background-color: var(--button-background-color);
     color: #fff;
@@ -718,7 +734,7 @@ input::placeholder {
     line-height: 24px;
     width: 100%;
     outline: none;
-    transition: all var(--transition-alpha);
+    transition: all var(--global-transition-timing-alpha);
 }
 
 .c-button:hover {
@@ -862,11 +878,11 @@ input::placeholder {
 */
 
 .u-color-neutral {
-    color: var(--color-neutral);
+    color: var(--global-color-neutral);
 }
 
 .u-color-neutral-dark {
-    color: var(--color-neutral-dark);
+    color: var(--global-color-neutral-dark);
 }
 
 /*
