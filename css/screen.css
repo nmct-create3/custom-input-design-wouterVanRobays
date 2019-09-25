@@ -635,7 +635,7 @@ input::placeholder {
     margin-bottom: 0;
     font-size: 14px;
     padding-bottom: var(--global-whitespace-sm);    
-    line-height: calc(var(--global-borderRadius) * 2);
+    line-height: calc(var(--global-baseline) * 2);
     color: var(--global-color-neutral-xx-dark);
 }
 
