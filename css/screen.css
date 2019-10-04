@@ -44,6 +44,7 @@
     --color-neutral-xxx-dark: #35374d;
     --color-neutral-xxxx-dark: #20223a;
  
+    --global-color-alpha-x-transparent: rgba(51,133,255,.2);
     /* Shadows */
     --shadow-color: #20223a15;
     --inset-shadow: inset 0 1px 1px var(--shadow-color);
@@ -731,6 +732,7 @@ input::placeholder {
 */
 .c-custom-option{
     display: flex;
+
 }
 .c-custom-option__fake-input {
     display:flex;
@@ -748,6 +750,56 @@ input::placeholder {
 }
 .c-custom-option__fake-input--radio {
     border-radius: 100%;
+}
+
+/* Toggle */
+
+.c-custom-toggle{
+    --toggle-translateX: 0;
+    --toggle-borderColor: var(--color-neutral-xxx-light);
+    --toggle-backgroundColor: var(--color-neutral-xxxx-light);
+    
+    --toggle-boxShadow: 0 0 0 0; /* standaard lege box shadow */
+    --toggle-boxShadowColor: var(--global-color-alpha-x-transparent);
+
+    display: flex;
+    align-items: center; /* verticaal aligneren */
+}
+
+.c-custom-toggle__fake-input {
+    border: 1px solid var(--toggle-borderColor);
+    width: 48px;
+    height: 24px;
+    display: block;
+    border-radius: 24px;
+    margin-right: 16px;
+    background: var(--toggle-backgroundColor);
+    transition: all 200ms ease-out; /* all is slecht voor de performance */
+}
+
+.c-custom-toggle__fake-input::after {
+    height: 22px; /* 24px van parent, -1px border boven, -1px border onderaan.*/
+    width: 22px;
+    border-radius: 50%;
+    content: ""; /* verplicht bij elke ::before en ::after */
+    display: block;
+    background: white;
+    box-shadow: 0 1px 3px var(--toggle-boxShadowColor);
+    will-change: transform;/*puur voor de performance, de browser weet dat dit kan aanpassen*/
+    transition: all 200ms ease-out; /* all is slecht voor de performance */
+    transform: translateX(var(--toggle-translateX)); /* standaard 0 */
+}
+
+/*.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    transform: translateX(24px);
+}*/
+
+.c-option--hidden:checked + .c-custom-toggle {
+    --toggle-translateX: 24px;
+    --toggle-borderColor: var(--color-alpha-dark);
+    --toggle-backgroundColor: var(--color-alpha);
+    
+    --toggle-boxShadow: 0 0 0 4px; /* standaard lege box shadow */
 }
  
 /* Hide the actual input with the class .o-hide-accessible */
@@ -781,6 +833,70 @@ input::placeholder {
     border-color: var(--color-alpha-x-light);
     box-shadow: var(--global-input-boxShadow-focus); /* 0 0 0 3px #3385ff33;*/
 }
+
+.c-toggle-list__item + .c-toggle-list__item{
+    margin-top: 24px;
+}
+
+.c-custom-toggle--inverted {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+}
+.c-custom-toggle--inverted .c-custom-toggle__fake-input {
+    margin-right: 0;
+}
+
+/* component: select*/
+.c-custom-select {
+    display: block;
+    position: relative;
+}
+
+.c-custom-select__symbol {
+    width: 24px;
+    height: 24px;
+    fill:var(--color-neutral-x-light);
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    pointer-events: none;/* anders klapt de select niet open bij het klikken op de pijl */
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: var(--color-neutral-xxxx-dark);
+    }
+    .c-logo__path{
+        fill:white;
+    }
+    .c-card__body, .c-card__footer{
+        background: var(--color-neutral-xxx-dark);
+    }
+    .c-card__footer{
+        border-color: var(--color-neutral-xxxx-dark);
+    }
+    h2 {
+        color: white;
+    }
+    .c-label {
+        color: var(--color-neutral-x-light);
+    }
+    .c-input{
+        background: var(--color-neutral-xxxx-dark);
+        color: var(--color-neutral-dark);
+    }
+    a{
+        text-decoration: none;
+    }
+    .c-custom-option__fake-input--checkbox{
+        border-color: var(--color-neutral-xxxx-dark);
+        background: var(--color-neutral-xxxx-dark);
+    }
+}
+
  
 /*------------------------------------*\
 #UTILITIES
