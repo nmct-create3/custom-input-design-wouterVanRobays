@@ -45,6 +45,7 @@
     --color-neutral-xxxx-dark: #20223a;
  
     --global-color-alpha-x-transparent: rgba(51,133,255,.2);
+    --global-color-alpha-dark-transparent: rgba(51,133,255,.75);
     /* Shadows */
     --shadow-color: #20223a15;
     --inset-shadow: inset 0 1px 1px var(--shadow-color);
@@ -63,6 +64,9 @@
     --global-input-focus-borderColor: var(--color-alpha);
     --global-input-boxShadow: 0 0 0 3px var(--color-alpha-x-transparent);
     --global-input-boxShadow-focus: 0 0 0 3px #3385ff33;
+
+    --global-page-color: var(--color-neutral-xxxx-dark);
+    --global-page-backgroundColor: var(--color-neutral-xxxx-light);
 }
  
 /*------------------------------------*\
@@ -79,11 +83,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter UI Web", Helvetica, arial, sans-serif;
-    color: var(--color-neutral-xxxx-dark);
+    color: var(--global-page-color);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-neutral-xxxx-light);
+    background-color: var(--global-page-backgroundColor);
 }
  
 *,
@@ -217,6 +221,7 @@ a {
     outline-color: var(--color-alpha);
     outline-width: medium;
     outline-offset: 2px;
+    text-decoration: none;
 }
  
 a:visited,
@@ -538,15 +543,15 @@ input::placeholder {
 }
  
 .c-logo__path--1 {
-    fill: var(--color-neutral-xxxx-dark);
+    fill: var(--logo__path--1--fill, var(--color-neutral-xxxx-dark));
 }
  
 .c-logo__path--2 {
-    fill: var(--color-alpha);
+    fill: var(--logo__path--2--fill, var(--color-alpha));
 }
  
 .c-logo__path--3 {
-    fill: var(--color-alpha-x-dark);
+    fill: var(--logo__path--3--fill, var(--color-alpha-x-dark));
 }
  
 /* Light logo alternative */
@@ -562,7 +567,7 @@ input::placeholder {
 */
  
 .c-card {
-    background-color: white;
+    background-color: var(--card__bg-color, var(--global-input-backgroundColor));
     margin-bottom: 24px;
     border-radius: var(--radius);
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
@@ -578,8 +583,7 @@ input::placeholder {
  
 .c-card__footer {
     text-align: center;
-    border-top: 1px solid var(--color-neutral-xxx-light);
-    background-color: var(--color-neutral-xxxx-light);
+    border-top: 1px solid var(--card__footer-border, var(--color-neutral-xxx-light));
 }
  
 .c-card__title {
@@ -638,7 +642,7 @@ input::placeholder {
     transition: border var(--transition-alpha);
     border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
     background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
-    color: var(--global-input-color);
+    color: var(--input-color, var(--global-input-color));
 }
  
 .c-input:hover {
@@ -648,7 +652,7 @@ input::placeholder {
 .c-input:focus,
 .c-input:active {
     border-color: var(--color-alpha-x-light);
-    box-shadow: 0 0 0 3px var(--color-alpha-xx-light);
+    box-shadow: 0 0 0 3px var(--input-boxShadowColor, var(--color-alpha-xx-light));
 }
  
 /* option input for checkboxes and radio buttons */
@@ -670,7 +674,7 @@ input::placeholder {
     padding-bottom: 8px;
     font-size: 14px;
     line-height: 16px;
-    color: var(--color-neutral-x-dark);
+    color: var(--label__color, var(--color-neutral-x-dark));
 }
  
 .c-label--option {
@@ -685,7 +689,7 @@ input::placeholder {
  
 .c-button {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: var(--radius);
     border: 1px solid var(--color-alpha-dark);
     background-color: var(--color-alpha);
@@ -735,10 +739,11 @@ input::placeholder {
 
 }
 .c-custom-option__fake-input {
+    background: var(--custom-input--backgroundColor, var(--global-input-backgroundColor));
     display:flex;
     width: 16px;
     height: 16px;
-    border: 1px solid var(--global-input-borderColor);
+    border: 1px solid var(--custom-input--borderColor, var(--global-input-borderColor));
     margin-right: 8px;
     box-shadow: var(--inset-shadow);
     align-items: center;
@@ -866,34 +871,41 @@ input::placeholder {
 
 /* DARK MODE */
 @media (prefers-color-scheme: dark) {
-    html {
-        background-color: var(--color-neutral-xxxx-dark);
+    :root {
+        --global-page-color: white;
+        --global-page-backgroundColor: var(--color-neutral-xxxx-dark);
     }
-    .c-logo__path{
-        fill:white;
+    .c-logo {
+        --logo__path--1--fill: white;
+        --logo__path--2--fill: var(--logo__path--1--fill);
+        --logo__path--3--fill: var(--logo__path--1--fill);
     }
-    .c-card__body, .c-card__footer{
-        background: var(--color-neutral-xxx-dark);
+
+    .c-card{
+        --card__bg-color: var(--color-neutral-xxx-dark);
     }
+
     .c-card__footer{
-        border-color: var(--color-neutral-xxxx-dark);
+        --card__footer-border: var(--color-neutral-xxxx-dark) ;
     }
-    h2 {
-        color: white;
+
+    h2
+    {
+        color: var(--global-input-backgroundColor);
     }
-    .c-label {
-        color: var(--color-neutral-x-light);
+    .c-label
+    {
+        --label__color: var(--color-neutral-x-light)
     }
-    .c-input{
-        background: var(--color-neutral-xxxx-dark);
-        color: var(--color-neutral-dark);
+    .c-input {
+        --input-backgroundColor: var(--color-neutral-xxxx-dark);
+        --input-color: var(--color-neutral-dark);
+        --input-boxShadowColor: var(--global-color-alpha-dark-transparent);
     }
-    a{
-        text-decoration: none;
-    }
-    .c-custom-option__fake-input--checkbox{
-        border-color: var(--color-neutral-xxxx-dark);
-        background: var(--color-neutral-xxxx-dark);
+    .c-custom-option__fake-input
+    {
+        --custom-input--backgroundColor: var(--color-neutral-xxxx-dark);
+        --custom-input--borderColor: var(--color-neutral-xxxx-dark);
     }
 }
 
